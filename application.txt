@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: go-sample-api
-  namespace: argocd   # Pastikan ini namespace tempat ArgoCD terinstall
+  namespace: cicd
 spec:
   project: default
 
