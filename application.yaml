@@ -4,15 +4,20 @@ metadata:
   name: go-sample-api
   namespace: argocd
 spec:
-  destination:
-    namespace: cicd
-    server: https://kubernetes.default.svc
+  project: default
+
   source:
     repoURL: https://github.com/devpandai/go-sample-deploy.git
     targetRevision: main
     path: .
-  project: default
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cicd
+
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
