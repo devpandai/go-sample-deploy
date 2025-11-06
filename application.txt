@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: go-sample-api
-  namespace: argocd
+  namespace: argocd   # Pastikan ini namespace tempat ArgoCD terinstall
 spec:
   project: default
 
@@ -16,8 +16,8 @@ spec:
     namespace: cicd
 
   syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+    automated:        # Auto sync changes from repo
+      prune: true     # Hapus resource yang tidak ada di repo
+      selfHeal: true  # Perbaiki jika ada perubahan manual di cluster
     syncOptions:
-      - CreateNamespace=true
+      - CreateNamespace=true  # Buat namespace cicd kalau belum ada
