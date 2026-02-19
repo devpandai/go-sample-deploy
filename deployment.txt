@@ -14,10 +14,10 @@ spec:
         app: go-sample-api
     spec:
       imagePullSecrets:
-      - name: harbor-secret   # <-- ganti sesuai secret Harbor
+      - name: ghcr-secret
       containers:
       - name: go-sample-api
-        image: registry.pimen.web.id/library/go-sample-api:latest
+        image: ghcr.io/devpandai/go-sample-api:latest
         ports:
         - containerPort: 8080
         resources:
