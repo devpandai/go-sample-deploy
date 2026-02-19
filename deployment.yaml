@@ -17,7 +17,7 @@ spec:
       - name: harbor-secret   # <-- ganti sesuai secret Harbor
       containers:
       - name: go-sample-api
-        image: registry.pimen.web.id/library/go-sample-api:latest
+        image: registry.pimen.web.id/library/go-sample-api:13
         ports:
         - containerPort: 8080
         resources:
